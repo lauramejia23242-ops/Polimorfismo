@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Astronomía – Polimorfismo</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #0f172a, #020617);
+            color:white;
+        }
+
+
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        h2{
+            text-align:center;
+            margin-top:35px;
+        }
+
+        .astro-list{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:15px;
+            margin-top:20px;
+        }
+
+        .astro-item{
+            background:rgba(255,255,255,0.07);
+            border-radius:12px;
+            padding:15px 18px;
+            box-shadow:0 0 12px rgba(125,211,252,0.2);
+        }
+
+        .subtitulo{
+            text-align:center;
+            color:#cbd5f5;
+            margin-top:-10px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌌 Astronomía y Polimorfismo en Java</h1>
+    <p class="subtitulo">
+        Ejemplo con interfaces y clases abstractas
+    </p>
+
+    <h2 style="color:#7dd3fc;">Polimorfismo con Interfaces</h2>
+
+    <div class="astro-list">
+        <div class="astro-item"
+             th:each="m : ${mensajesInterfaz}"
+             th:text="${m}">
+        </div>
+    </div>
+
+    <h2 style="color:#c084fc;">Polimorfismo con Clases Abstractas</h2>
+
+    <div class="astro-list">
+        <div class="astro-item"
+             th:each="m : ${mensajesAbstracto}"
+             th:text="${m}">
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
